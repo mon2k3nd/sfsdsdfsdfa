@@ -19,3 +19,4 @@
 - [x] Tăng độ tương phản chữ trên ảnh mở đầu và các lớp chữ phủ lên ảnh.
 - [x] Làm nền sáng dần xuống cuối trang và tăng độ nổi bật cho toàn bộ thông tin bên dưới.
 - [x] Chuyển nền cuối trang thành trắng hoàn toàn và làm chữ mở đầu rõ trên ảnh.
+- [x] Khôi phục độ rõ của toàn bộ câu chữ trong màn kể chuyện mở đầu.
