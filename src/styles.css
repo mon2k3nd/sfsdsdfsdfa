@@ -279,7 +279,10 @@
   color: var(--foreground);
 }
 @utility intro-grain { opacity:.13; background-image:radial-gradient(circle at 20% 30%,var(--paper) 0 1px,transparent 1px),radial-gradient(circle at 75% 65%,var(--paper) 0 1px,transparent 1px); background-size:7px 7px,11px 11px; }
-@utility intro-story { background: radial-gradient(circle at center,color-mix(in oklab,var(--primary) 18%,var(--foreground)),var(--foreground) 72%); }
+@utility intro-story {
+  color: var(--foreground);
+  background: radial-gradient(circle at center, color-mix(in oklab, var(--ink) 82%, var(--primary)), var(--ink) 74%);
+}
 @utility opening-verse { position: relative; }
 @utility opening-verse-line {
   min-height: 1.65em;
@@ -287,6 +290,8 @@
   opacity: 0;
   font-size: clamp(1.65rem, 4.5vw, 3rem);
   line-height: 1.48;
+  color: var(--foreground);
+  text-shadow: 0 2px 14px color-mix(in oklab, var(--ink) 72%, transparent);
 }
 @utility opening-verse-finale { color: var(--secondary); margin-top: .35em; }
 @utility opening-verse-flourish {
