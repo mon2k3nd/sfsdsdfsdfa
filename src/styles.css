@@ -239,7 +239,7 @@
   background-image:
     radial-gradient(circle at 15% 20%, color-mix(in oklab, var(--sky-soft) 55%, transparent), transparent 28%),
     radial-gradient(circle at 85% 55%, color-mix(in oklab, var(--peach-soft) 48%, transparent), transparent 26%),
-    linear-gradient(to bottom, var(--paper) 0%, color-mix(in oklab, var(--paper) 74%, var(--primary)) 42%, color-mix(in oklab, var(--paper) 42%, var(--primary)) 100%);
+    linear-gradient(to bottom, var(--paper) 0%, color-mix(in oklab, var(--paper) 72%, var(--primary)) 38%, oklch(0.985 0.004 205) 82%, oklch(1 0 0) 100%);
 }
 @utility film-shadow { box-shadow: 0 24px 70px color-mix(in oklab, var(--ink) 15%, transparent); }
 @utility cinema-intro {
@@ -261,9 +261,22 @@
 .story-opening .hero-photo { animation: none; }
 .story-opening .hero-copy { animation: heroCopyEnter 1.8s 15.15s cubic-bezier(.22,.72,.22,1) both; }
 @utility intro-poster { filter: saturate(.9) contrast(1.02); }
-@utility intro-shade { background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 18%, transparent) 0%, transparent 34%, color-mix(in oklab, var(--ink) 52%, transparent) 68%, color-mix(in oklab, var(--ink) 88%, transparent) 100%); }
+@utility intro-shade { background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 14%, transparent) 0%, color-mix(in oklab, var(--ink) 10%, transparent) 35%, color-mix(in oklab, var(--ink) 76%, transparent) 66%, color-mix(in oklab, var(--ink) 96%, transparent) 100%); }
 .intro-start, .hero-copy, .intro-handoff-copy {
-  text-shadow: 0 2px 16px color-mix(in oklab, var(--ink) 78%, transparent), 0 1px 2px var(--ink);
+  text-shadow: 0 3px 20px var(--ink), 0 1px 3px var(--ink);
+}
+.light-section {
+  --foreground: oklch(0.27 0.032 215);
+  --card: oklch(0.985 0.004 205);
+  --card-foreground: oklch(0.27 0.032 215);
+  --muted-foreground: oklch(0.46 0.026 210);
+  --primary: oklch(0.4 0.045 210);
+  --primary-foreground: oklch(0.985 0.004 205);
+  --secondary: oklch(0.82 0.025 195);
+  --secondary-foreground: oklch(0.25 0.03 215);
+  --accent: oklch(0.46 0.045 195);
+  --border: oklch(0.78 0.018 205);
+  color: var(--foreground);
 }
 @utility intro-grain { opacity:.13; background-image:radial-gradient(circle at 20% 30%,var(--paper) 0 1px,transparent 1px),radial-gradient(circle at 75% 65%,var(--paper) 0 1px,transparent 1px); background-size:7px 7px,11px 11px; }
 @utility intro-story { background: radial-gradient(circle at center,color-mix(in oklab,var(--primary) 18%,var(--foreground)),var(--foreground) 72%); }
@@ -306,7 +319,7 @@
 }
 
 @utility hero-vignette {
-  background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 24%, transparent) 0%, transparent 30%, color-mix(in oklab, var(--ink) 66%, transparent) 64%, color-mix(in oklab, var(--ink) 94%, transparent) 100%);
+  background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 18%, transparent) 0%, color-mix(in oklab, var(--ink) 12%, transparent) 30%, color-mix(in oklab, var(--ink) 78%, transparent) 62%, color-mix(in oklab, var(--ink) 97%, transparent) 100%);
 }
 
 @utility gallery-stage {
