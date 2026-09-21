@@ -18,4 +18,4 @@
 - [x] Hạ nền xanh sáng về cùng tông xanh xám trầm với ảnh mở đầu.
 - [x] Tăng độ tương phản chữ trên ảnh mở đầu và các lớp chữ phủ lên ảnh.
 - [x] Làm nền sáng dần xuống cuối trang và tăng độ nổi bật cho toàn bộ thông tin bên dưới.
-- [ ] Chuyển nền cuối trang thành trắng hoàn toàn và làm chữ mở đầu rõ trên ảnh.
+- [x] Chuyển nền cuối trang thành trắng hoàn toàn và làm chữ mở đầu rõ trên ảnh.
