@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { CalendarPlus, ChevronLeft, ChevronRight, ChevronUp, Heart, MapPin, Maximize2, Music2, Navigation, Pause, Phone, Share2, Sparkles, X } from "lucide-react";
-import QRCode from "qrcode";
 import { Button } from "@/components/ui/button";
 import a1 from "@/assets/TVT00967.jpg";
 import a2 from "@/assets/TVT00864.jpg";
@@ -12,6 +11,9 @@ import a6 from "@/assets/TVT01187.jpg";
 import a7 from "@/assets/TVT01136.jpg";
 import a8 from "@/assets/TVT01066.jpg";
 import a9 from "@/assets/TVT01057.jpg";
+import a10Asset from "@/assets/TVT00717.JPG.asset.json";
+import a11Asset from "@/assets/TVT00641.JPG.asset.json";
+import a12Asset from "@/assets/TVT00758.JPG.asset.json";
 import musicUrl from "@/assets/leDuong.mp3";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +29,7 @@ export const Route = createFileRoute("/")({
 });
 
 const [img1, , img3, img4, img5, img6, img7, img8, img9] = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
-const gallery = [img1, img3, img4, img5, img6, img7, img8, img9];
+const gallery = [img1, img3, img4, img5, img6, img7, img8, img9, a10Asset.url, a11Asset.url, a12Asset.url];
 const storyPhoto = [img4, img5, img6, img7];
 const weddingDate = new Date("2026-10-03T10:00:00+07:00").getTime();
 const introStory = [
@@ -64,7 +66,6 @@ function WeddingInvitation() {
   const [playing, setPlaying] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [progress, setProgress] = useState(0);
-  const [qr, setQr] = useState("");
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [wishes, setWishes] = useState<Array<{ id: string; guest_name: string; message: string }>>([]);
   const [wishStatus, setWishStatus] = useState("");
@@ -84,7 +85,6 @@ function WeddingInvitation() {
     const timer = window.setInterval(update, 1000);
     const onScroll = () => setProgress(Math.min(100, (window.scrollY / Math.max(1, document.documentElement.scrollHeight - window.innerHeight)) * 100));
     window.addEventListener("scroll", onScroll, { passive: true });
-    QRCode.toDataURL(window.location.href, { width: 220, margin: 1, color: { dark: "#2f4951", light: "#e8eff0" } }).then(setQr).catch(() => setQr(""));
     return () => { window.clearInterval(timer); window.removeEventListener("scroll", onScroll); };
   }, []);
 
@@ -226,7 +226,7 @@ function WeddingInvitation() {
     </section>
 
     <section id="gallery" className="gallery-stage py-12 md:py-18"><div className="mx-auto max-w-6xl"><div className="reveal px-6 text-center"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương III · Những thước phim</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Một đời, thật nhiều dịu dàng</h2><p className="mx-auto mt-3 text-xs text-muted-foreground">Chạm vào ảnh để xem trọn khoảnh khắc</p></div>
-      <div className="mt-8 grid grid-cols-2 items-start gap-1.5 px-1.5 sm:gap-3 sm:px-3 md:grid-cols-3">{gallery.map((src,i) => { const featured = i === 0; return <Button type="button" variant="image" key={src} onClick={() => setLightboxIndex(i)} className={`gallery-tile reveal group relative h-auto w-full min-w-0 overflow-hidden p-0 aspect-[3/4] ${featured ? "col-span-2 aspect-[4/5] md:col-span-1 md:aspect-[3/4]" : ""}`}><img src={src} alt={`Khoảnh khắc cưới ${i+1}`} loading="lazy" className="absolute inset-0 block h-full w-full object-cover object-[50%_25%] transition duration-700 group-hover:scale-[1.035]"/><span className="gallery-sheen absolute inset-0"/><span className="absolute bottom-3 left-3 font-display text-sm italic text-primary-foreground/90">{String(i+1).padStart(2,"0")}</span></Button>; })}</div></div>
+      <div className="mt-8 grid grid-cols-2 items-start gap-1.5 px-1.5 sm:gap-3 sm:px-3 md:grid-cols-3">{gallery.map((src,i) => { const first = i === 0; const penultimate = i === gallery.length - 2; return <Button type="button" variant="image" key={src} onClick={() => setLightboxIndex(i)} className={`gallery-tile reveal group relative h-auto w-full min-w-0 overflow-hidden p-0 ${first ? "col-span-2 aspect-[4/5] md:col-span-1 md:aspect-[3/4]" : penultimate ? "aspect-[3/4] md:col-span-2 md:aspect-[3/2]" : "aspect-[3/4]"}`}><img src={src} alt={`Khoảnh khắc cưới ${i+1}`} loading="lazy" className="absolute inset-0 block h-full w-full object-cover object-[50%_25%] transition duration-700 group-hover:scale-[1.035]"/><span className="gallery-sheen absolute inset-0"/><span className="absolute bottom-3 left-3 font-display text-sm italic text-primary-foreground/90">{String(i+1).padStart(2,"0")}</span></Button>; })}</div></div>
     </section>
 
     <section id="date" className="mx-auto max-w-5xl px-6 py-12 md:py-18"><div className="grid gap-8 md:grid-cols-2"><div className="reveal"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương IV · Hẹn ngày</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Tháng Mười<br/>mình có hẹn</h2></div><div className="reveal"><Calendar /></div></div>
@@ -240,7 +240,7 @@ function WeddingInvitation() {
 
     <section id="wishes" className="mx-auto max-w-5xl px-6 py-12 md:py-18"><div className="reveal text-center"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Những điều thương mến</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Gửi một lời chúc</h2></div><form onSubmit={submitWish} className="reveal mx-auto mt-7 grid max-w-xl gap-3"><Field name="wishName" label="Tên của bạn" required light/><label className="grid gap-2 text-sm">Lời chúc<textarea required name="message" maxLength={500} rows={3} className="rounded-sm border border-border bg-card p-4"/></label><button type="submit" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-medium text-primary-foreground"><Heart size={17}/> Gửi lời chúc</button>{wishStatus && <p role="status" className="text-center text-sm text-primary">{wishStatus}</p>}</form><div className="mx-auto mt-8 grid max-w-2xl gap-3">{wishes.length ? wishes.map(w=><div key={w.id} className="grid grid-cols-[auto_1fr_auto] gap-3 rounded-sm border border-border bg-card p-4"><div className="grid h-10 w-10 place-items-center rounded-full bg-secondary font-display text-lg text-secondary-foreground">{w.guest_name.charAt(0).toUpperCase()}</div><div className="min-w-0"><strong className="text-sm">{w.guest_name}</strong><p className="mt-1 text-sm leading-6 text-muted-foreground">{w.message}</p></div><Heart size={16} className="mt-1 text-accent"/></div>) : <p className="text-center text-sm text-muted-foreground">Hãy là người đầu tiên gửi lời chúc đến hai chúng mình.</p>}</div></section>
 
-    <section className="relative min-h-[82svh] overflow-hidden bg-foreground"><img src={img9} alt="Thảo My và Xuân Tú dưới tấm voan cưới" className="absolute inset-0 h-full w-full object-cover opacity-60"/><div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/20 to-transparent"/><div className="relative mx-auto flex min-h-[82svh] max-w-xl flex-col items-center justify-end px-6 pb-20 text-center text-primary-foreground"><Sparkles className="mb-5 text-secondary"/><p className="font-display text-lg italic leading-[2] text-primary-foreground/80">Cảm ơn bạn đã đi hết<br/>câu chuyện của chúng mình.</p><h2 className="mt-6 text-5xl">The End</h2><p className="mt-2 text-xs uppercase tracking-[.28em] text-secondary">See you there</p><div className="mt-10 flex items-center gap-4">{qr && <img src={qr} alt="Mã QR thiệp cưới" className="h-24 w-24 rounded-sm"/>}<div className="text-left text-xs leading-6 text-primary-foreground/65">Thảo My & Xuân Tú<br/>03 · 10 · 2026</div></div></div></section>
+    <section className="relative min-h-[82svh] overflow-hidden bg-foreground"><img src={img9} alt="Thảo My và Xuân Tú dưới tấm voan cưới" className="absolute inset-0 h-full w-full object-cover opacity-60"/><div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/20 to-transparent"/><div className="relative mx-auto flex min-h-[82svh] max-w-xl flex-col items-center justify-end px-6 pb-20 text-center text-primary-foreground"><Sparkles className="mb-5 text-secondary"/><p className="font-display text-lg italic leading-[2] text-primary-foreground/80">Cảm ơn bạn đã đi hết<br/>câu chuyện của chúng mình.</p><h2 className="mt-6 text-5xl">The End</h2><p className="mt-2 text-xs uppercase tracking-[.28em] text-secondary">See you there</p><p className="mt-9 text-xs leading-6 text-primary-foreground/65">Thảo My & Xuân Tú<br/>03 · 10 · 2026</p></div></section>
 
      {lightboxIndex !== null && <div role="dialog" aria-modal="true" aria-label="Xem ảnh cưới" className="lightbox fixed inset-0 z-50 grid place-items-center bg-foreground p-0" onClick={closeLightbox} onTouchStart={(event) => { touchStart.current = event.changedTouches[0]?.clientX ?? 0; }} onTouchEnd={(event) => { const distance = (event.changedTouches[0]?.clientX ?? 0) - touchStart.current; if (Math.abs(distance) > 45) distance > 0 ? showPrevious() : showNext(); }}><div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-foreground/75 to-transparent px-4 pb-10 pt-[max(1rem,env(safe-area-inset-top))]"><span className="text-xs tracking-[.18em] text-primary-foreground/75">{String(lightboxIndex+1).padStart(2,"0")} / {gallery.length}</span><IconButton label="Đóng ảnh" onClick={closeLightbox}><X size={20}/></IconButton></div><img src={gallery[lightboxIndex]} alt={`Ảnh cưới ${lightboxIndex+1}`} className="h-full w-full object-contain" onClick={e=>e.stopPropagation()}/><div className="absolute inset-x-0 bottom-0 z-10 grid grid-cols-[auto_1fr_auto] items-center gap-5 bg-gradient-to-t from-foreground/80 to-transparent px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-12"><IconButton label="Ảnh trước" onClick={showPrevious}><ChevronLeft size={21}/></IconButton><p className="text-center text-[10px] uppercase tracking-[.2em] text-primary-foreground/60">Vuốt để xem tiếp</p><IconButton label="Ảnh tiếp theo" onClick={showNext}><ChevronRight size={21}/></IconButton></div></div>}
   </main>;
