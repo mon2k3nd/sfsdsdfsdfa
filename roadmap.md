@@ -14,3 +14,5 @@
 - [x] Rút gọn khoảng cách dọc và nhịp xuất hiện nội dung trên điện thoại lẫn máy tính.
 - [x] Đồng bộ toàn bộ giao diện sang tông xanh xám trầm theo ảnh mẫu, giữ nguyên nội dung và chuyển cảnh.
 - [x] Thêm ba ảnh cưới mới và cân lại thư viện ảnh thành lưới đồng nhất, không còn khoảng trống.
+- [ ] Bỏ mã QR ở cuối trang.
+- [ ] Hạ nền xanh sáng về cùng tông xanh xám trầm với ảnh mở đầu.
