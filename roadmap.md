@@ -16,3 +16,4 @@
 - [x] Thêm ba ảnh cưới mới và cân lại thư viện ảnh thành lưới đồng nhất, không còn khoảng trống.
 - [x] Bỏ mã QR ở cuối trang.
 - [x] Hạ nền xanh sáng về cùng tông xanh xám trầm với ảnh mở đầu.
+- [x] Tăng độ tương phản chữ trên ảnh mở đầu và các lớp chữ phủ lên ảnh.

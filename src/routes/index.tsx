@@ -47,13 +47,13 @@ function WeddingHero({ intro = false, showHint = false }: { intro?: boolean; sho
   return <section id={intro ? undefined : "home"} className="wedding-hero-frame relative min-h-[100svh] overflow-hidden bg-foreground">
     <img src={img1} alt={intro ? "" : "Thảo My và Xuân Tú trong ngày cưới"} aria-hidden={intro || undefined} className="hero-photo absolute inset-0 h-full w-full object-cover object-[50%_30%]" />
     <div className="hero-vignette absolute inset-0" />
-    <div className="hero-copy relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-end px-5 pb-10 text-center text-primary-foreground">
-      <p className="mb-4 text-[10px] uppercase tracking-[.3em] text-primary-foreground/85">03 · 10 · 2026</p>
+    <div className="hero-copy relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-end px-5 pb-10 text-center text-foreground">
+      <p className="mb-4 text-[10px] uppercase tracking-[.3em] text-foreground/90">03 · 10 · 2026</p>
       {intro
         ? <p className="font-display text-[3.6rem] leading-[.9] sm:text-8xl">Thảo My<br/><span className="text-secondary">&</span> Xuân Tú</p>
         : <h1 className="text-[3.6rem] leading-[.9] sm:text-8xl">Thảo My<br/><span className="text-secondary">&</span> Xuân Tú</h1>}
       <p className="mt-6 font-display text-lg italic leading-[2]">Hai con người,<br/>hai hành trình,<br/>một đích đến.</p>
-      <span aria-hidden className={`scroll-hint mt-8 block h-12 w-px text-primary-foreground/70 transition-opacity duration-700 ${showHint ? "opacity-100" : "opacity-0"}`}><i /></span>
+      <span aria-hidden className={`scroll-hint mt-8 block h-12 w-px text-foreground/80 transition-opacity duration-700 ${showHint ? "opacity-100" : "opacity-0"}`}><i /></span>
     </div>
   </section>;
 }
@@ -160,19 +160,19 @@ function WeddingInvitation() {
 
   return <main className={`paper-texture min-h-screen text-foreground ${opening ? "story-opening" : ""}`}>
     <audio ref={audioRef} src={musicUrl} loop preload="metadata" />
-    {!opened && <div className={`cinema-intro fixed inset-0 z-50 overflow-hidden text-primary-foreground ${opening ? "is-playing" : ""} ${introLeaving ? "is-leaving" : ""}`}>
+    {!opened && <div className={`cinema-intro fixed inset-0 z-50 overflow-hidden text-foreground ${opening ? "is-playing" : ""} ${introLeaving ? "is-leaving" : ""}`}>
       <img aria-hidden src={img1} className="intro-poster absolute inset-0 h-full w-full object-cover object-[50%_30%]" alt="" />
       <div aria-hidden className="intro-shade absolute inset-0" />
 
       {!opening && <div className="intro-start relative z-20 flex h-full flex-col items-center justify-end px-6 pb-[max(5rem,10vh)] text-center">
-        <p className="text-[10px] uppercase tracking-[.34em] text-primary-foreground/75">The wedding film</p>
+        <p className="text-[10px] uppercase tracking-[.34em] text-foreground/85">The wedding film</p>
         <h2 className="mt-4 text-5xl leading-[.92] sm:text-6xl">Thảo My <span className="text-secondary">&</span><br/>Xuân Tú</h2>
-        <p className="mt-5 font-display text-lg italic text-primary-foreground/80">Một câu chuyện được viết bằng thương yêu</p>
+        <p className="mt-5 font-display text-lg italic text-foreground/90">Một câu chuyện được viết bằng thương yêu</p>
         <Button type="button" variant="hero" onClick={enterInvitation} aria-label="Bắt đầu câu chuyện của Thảo My và Xuân Tú" className="mt-8 min-w-44 rounded-full">Bắt đầu câu chuyện</Button>
       </div>}
 
       {opening && <>
-        <Button type="button" variant="ghost" onClick={() => { setIntroLeaving(true); window.setTimeout(() => setOpened(true), 1600); }} className="intro-skip absolute right-4 top-[max(1rem,env(safe-area-inset-top))] z-50 text-primary-foreground/70 hover:text-primary-foreground">Bỏ qua</Button>
+        <Button type="button" variant="ghost" onClick={() => { setIntroLeaving(true); window.setTimeout(() => setOpened(true), 1600); }} className="intro-skip absolute right-4 top-[max(1rem,env(safe-area-inset-top))] z-50 text-foreground/80 hover:text-foreground">Bỏ qua</Button>
         <div className="intro-grain absolute inset-0 z-10" />
         <div className="intro-story absolute inset-0 z-20 flex items-center justify-center px-7">
           <div className="opening-verse w-full max-w-3xl text-center font-display italic" aria-label={introStory.join(" ")}>
@@ -184,8 +184,8 @@ function WeddingInvitation() {
             <span aria-hidden className="opening-verse-flourish" />
           </div>
         </div>
-        <div aria-hidden className="intro-handoff-copy absolute inset-0 z-30 mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-end px-5 pb-10 text-center text-primary-foreground">
-          <p className="mb-4 text-[10px] uppercase tracking-[.3em] text-primary-foreground/85">03 · 10 · 2026</p>
+        <div aria-hidden className="intro-handoff-copy absolute inset-0 z-30 mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-end px-5 pb-10 text-center text-foreground">
+          <p className="mb-4 text-[10px] uppercase tracking-[.3em] text-foreground/90">03 · 10 · 2026</p>
           <p className="font-display text-[3.6rem] leading-[.9] sm:text-8xl">Thảo My<br/><span className="text-secondary">&</span> Xuân Tú</p>
           <p className="mt-6 font-display text-lg italic leading-[2]">Hai con người,<br/>hai hành trình,<br/>một đích đến.</p>
           <span className="mt-8 block h-12 w-px opacity-0" />
@@ -204,7 +204,7 @@ function WeddingInvitation() {
 
     <section id="invitation" className="mx-auto grid max-w-5xl items-center gap-8 px-6 py-16 md:grid-cols-[.85fr_1.15fr] md:py-24">
       <div className="reveal"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương I · Lời mời</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Ngày chúng mình<br/>gọi nhau là gia đình</h2><p className="mt-5 max-w-sm leading-7 text-muted-foreground">Sẽ thật trọn vẹn nếu ngày ấy có nụ cười của bạn.</p></div>
-      <Button type="button" variant="image" onClick={() => setLightboxIndex(gallery.indexOf(img3))} className="reveal reveal-slow relative ml-auto h-auto w-full overflow-hidden p-0"><img src={img3} alt="Ảnh cưới của Thảo My và Xuân Tú" className="aspect-[3/4] w-full object-cover"/><span className="absolute bottom-4 right-4 grid h-10 w-10 place-items-center rounded-full bg-foreground/45 text-primary-foreground backdrop-blur"><Maximize2 size={18}/></span></Button>
+      <Button type="button" variant="image" onClick={() => setLightboxIndex(gallery.indexOf(img3))} className="reveal reveal-slow relative ml-auto h-auto w-full overflow-hidden p-0"><img src={img3} alt="Ảnh cưới của Thảo My và Xuân Tú" className="aspect-[3/4] w-full object-cover"/><span className="absolute bottom-4 right-4 grid h-10 w-10 place-items-center rounded-full bg-background/75 text-foreground backdrop-blur"><Maximize2 size={18}/></span></Button>
     </section>
 
     <section className="bg-foreground px-5 py-16 text-primary-foreground md:py-24">
@@ -226,7 +226,7 @@ function WeddingInvitation() {
     </section>
 
     <section id="gallery" className="gallery-stage py-12 md:py-18"><div className="mx-auto max-w-6xl"><div className="reveal px-6 text-center"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương III · Những thước phim</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Một đời, thật nhiều dịu dàng</h2><p className="mx-auto mt-3 text-xs text-muted-foreground">Chạm vào ảnh để xem trọn khoảnh khắc</p></div>
-      <div className="mt-8 grid grid-cols-2 items-start gap-1.5 px-1.5 sm:gap-3 sm:px-3 md:grid-cols-3">{gallery.map((src,i) => { const first = i === 0; const penultimate = i === gallery.length - 2; return <Button type="button" variant="image" key={src} onClick={() => setLightboxIndex(i)} className={`gallery-tile reveal group relative h-auto w-full min-w-0 overflow-hidden p-0 ${first ? "col-span-2 aspect-[4/5] md:col-span-1 md:aspect-[3/4]" : penultimate ? "aspect-[3/4] md:col-span-2 md:aspect-[3/2]" : "aspect-[3/4]"}`}><img src={src} alt={`Khoảnh khắc cưới ${i+1}`} loading="lazy" className="absolute inset-0 block h-full w-full object-cover object-[50%_25%] transition duration-700 group-hover:scale-[1.035]"/><span className="gallery-sheen absolute inset-0"/><span className="absolute bottom-3 left-3 font-display text-sm italic text-primary-foreground/90">{String(i+1).padStart(2,"0")}</span></Button>; })}</div></div>
+      <div className="mt-8 grid grid-cols-2 items-start gap-1.5 px-1.5 sm:gap-3 sm:px-3 md:grid-cols-3">{gallery.map((src,i) => { const first = i === 0; const penultimate = i === gallery.length - 2; return <Button type="button" variant="image" key={src} onClick={() => setLightboxIndex(i)} className={`gallery-tile reveal group relative h-auto w-full min-w-0 overflow-hidden p-0 ${first ? "col-span-2 aspect-[4/5] md:col-span-1 md:aspect-[3/4]" : penultimate ? "aspect-[3/4] md:col-span-2 md:aspect-[3/2]" : "aspect-[3/4]"}`}><img src={src} alt={`Khoảnh khắc cưới ${i+1}`} loading="lazy" className="absolute inset-0 block h-full w-full object-cover object-[50%_25%] transition duration-700 group-hover:scale-[1.035]"/><span className="gallery-sheen absolute inset-0"/><span className="absolute bottom-3 left-3 font-display text-sm italic text-foreground">{String(i+1).padStart(2,"0")}</span></Button>; })}</div></div>
     </section>
 
     <section id="date" className="mx-auto max-w-5xl px-6 py-12 md:py-18"><div className="grid gap-8 md:grid-cols-2"><div className="reveal"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương IV · Hẹn ngày</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Tháng Mười<br/>mình có hẹn</h2></div><div className="reveal"><Calendar /></div></div>

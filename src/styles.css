@@ -259,6 +259,9 @@
 .story-opening .hero-copy { animation: heroCopyEnter 1.8s 15.15s cubic-bezier(.22,.72,.22,1) both; }
 @utility intro-poster { filter: saturate(.9) contrast(1.02); }
 @utility intro-shade { background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 18%, transparent) 0%, transparent 34%, color-mix(in oklab, var(--ink) 52%, transparent) 68%, color-mix(in oklab, var(--ink) 88%, transparent) 100%); }
+.intro-start, .hero-copy, .intro-handoff-copy {
+  text-shadow: 0 2px 16px color-mix(in oklab, var(--ink) 78%, transparent), 0 1px 2px var(--ink);
+}
 @utility intro-grain { opacity:.13; background-image:radial-gradient(circle at 20% 30%,var(--paper) 0 1px,transparent 1px),radial-gradient(circle at 75% 65%,var(--paper) 0 1px,transparent 1px); background-size:7px 7px,11px 11px; }
 @utility intro-story { background: radial-gradient(circle at center,color-mix(in oklab,var(--primary) 18%,var(--foreground)),var(--foreground) 72%); }
 @utility opening-verse { position: relative; }
@@ -300,7 +303,7 @@
 }
 
 @utility hero-vignette {
-  background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 18%, transparent) 0%, transparent 34%, color-mix(in oklab, var(--ink) 52%, transparent) 68%, color-mix(in oklab, var(--ink) 88%, transparent) 100%);
+  background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 24%, transparent) 0%, transparent 30%, color-mix(in oklab, var(--ink) 66%, transparent) 64%, color-mix(in oklab, var(--ink) 94%, transparent) 100%);
 }
 
 @utility gallery-stage {
