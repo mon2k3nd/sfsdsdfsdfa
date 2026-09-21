@@ -5,22 +5,22 @@
       "capability": "application code",
       "source": "GitHub repository",
       "outcome": "migrate",
-      "status": "migrated",
-      "next_action": "verify in preview"
+      "status": "verified",
+      "next_action": "none"
     },
     {
       "capability": "content and media",
       "source": "bundled source assets",
       "outcome": "migrate",
-      "status": "migrated",
-      "next_action": "verify in preview"
+      "status": "verified",
+      "next_action": "none"
     },
     {
       "capability": "transitions and interactions",
       "source": "client application",
       "outcome": "migrate",
-      "status": "migrated",
-      "next_action": "verify in preview"
+      "status": "verified",
+      "next_action": "none"
     },
     {
       "capability": "database records",
