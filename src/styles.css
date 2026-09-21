@@ -74,13 +74,13 @@
   --card-foreground: oklch(0.97 0.008 205);
   --popover: oklch(0.31 0.026 215);
   --popover-foreground: oklch(0.97 0.008 205);
-  --primary: oklch(0.86 0.038 195);
+  --primary: oklch(0.91 0.035 195);
   --primary-foreground: oklch(0.285 0.032 215);
   --secondary: oklch(0.7 0.032 195);
   --secondary-foreground: oklch(0.25 0.03 215);
   --muted: oklch(0.405 0.022 215);
-  --muted-foreground: oklch(0.86 0.018 205);
-  --accent: oklch(0.79 0.04 190);
+  --muted-foreground: oklch(0.9 0.016 205);
+  --accent: oklch(0.86 0.038 190);
   --accent-foreground: oklch(0.25 0.03 215);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
@@ -239,7 +239,7 @@
   background-image:
     radial-gradient(circle at 15% 20%, color-mix(in oklab, var(--sky-soft) 55%, transparent), transparent 28%),
     radial-gradient(circle at 85% 55%, color-mix(in oklab, var(--peach-soft) 48%, transparent), transparent 26%),
-    linear-gradient(to bottom, var(--paper) 0%, color-mix(in oklab, var(--paper) 82%, var(--primary)) 45%, color-mix(in oklab, var(--paper) 62%, var(--primary)) 100%);
+    linear-gradient(to bottom, var(--paper) 0%, color-mix(in oklab, var(--paper) 74%, var(--primary)) 42%, color-mix(in oklab, var(--paper) 42%, var(--primary)) 100%);
 }
 @utility film-shadow { box-shadow: 0 24px 70px color-mix(in oklab, var(--ink) 15%, transparent); }
 @utility cinema-intro {
