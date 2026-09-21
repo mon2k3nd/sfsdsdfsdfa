@@ -17,4 +17,4 @@
 - [x] Bỏ mã QR ở cuối trang.
 - [x] Hạ nền xanh sáng về cùng tông xanh xám trầm với ảnh mở đầu.
 - [x] Tăng độ tương phản chữ trên ảnh mở đầu và các lớp chữ phủ lên ảnh.
-- [ ] Làm nền sáng dần xuống cuối trang và tăng độ nổi bật cho toàn bộ thông tin bên dưới.
+- [x] Làm nền sáng dần xuống cuối trang và tăng độ nổi bật cho toàn bộ thông tin bên dưới.
