@@ -12,6 +12,9 @@ import a6 from "@/assets/TVT01187.jpg";
 import a7 from "@/assets/TVT01136.jpg";
 import a8 from "@/assets/TVT01066.jpg";
 import a9 from "@/assets/TVT01057.jpg";
+import a10Asset from "@/assets/TVT00717.JPG.asset.json";
+import a11Asset from "@/assets/TVT00641.JPG.asset.json";
+import a12Asset from "@/assets/TVT00758.JPG.asset.json";
 import musicUrl from "@/assets/leDuong.mp3";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 const [img1, , img3, img4, img5, img6, img7, img8, img9] = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
-const gallery = [img1, img3, img4, img5, img6, img7, img8, img9];
+const gallery = [img1, img3, img4, img5, img6, img7, img8, img9, a10Asset.url, a11Asset.url, a12Asset.url];
 const storyPhoto = [img4, img5, img6, img7];
 const weddingDate = new Date("2026-10-03T10:00:00+07:00").getTime();
 const introStory = [
@@ -226,7 +229,7 @@ function WeddingInvitation() {
     </section>
 
     <section id="gallery" className="gallery-stage py-12 md:py-18"><div className="mx-auto max-w-6xl"><div className="reveal px-6 text-center"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương III · Những thước phim</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Một đời, thật nhiều dịu dàng</h2><p className="mx-auto mt-3 text-xs text-muted-foreground">Chạm vào ảnh để xem trọn khoảnh khắc</p></div>
-      <div className="mt-8 grid grid-cols-2 items-start gap-1.5 px-1.5 sm:gap-3 sm:px-3 md:grid-cols-3">{gallery.map((src,i) => { const featured = i === 0; return <Button type="button" variant="image" key={src} onClick={() => setLightboxIndex(i)} className={`gallery-tile reveal group relative h-auto w-full min-w-0 overflow-hidden p-0 aspect-[3/4] ${featured ? "col-span-2 aspect-[4/5] md:col-span-1 md:aspect-[3/4]" : ""}`}><img src={src} alt={`Khoảnh khắc cưới ${i+1}`} loading="lazy" className="absolute inset-0 block h-full w-full object-cover object-[50%_25%] transition duration-700 group-hover:scale-[1.035]"/><span className="gallery-sheen absolute inset-0"/><span className="absolute bottom-3 left-3 font-display text-sm italic text-primary-foreground/90">{String(i+1).padStart(2,"0")}</span></Button>; })}</div></div>
+      <div className="mt-8 grid grid-cols-2 items-start gap-1.5 px-1.5 sm:gap-3 sm:px-3 md:grid-cols-3">{gallery.map((src,i) => <Button type="button" variant="image" key={src} onClick={() => setLightboxIndex(i)} className="gallery-tile reveal group relative aspect-[3/4] h-auto w-full min-w-0 overflow-hidden p-0"><img src={src} alt={`Khoảnh khắc cưới ${i+1}`} loading="lazy" className="absolute inset-0 block h-full w-full object-cover object-[50%_25%] transition duration-700 group-hover:scale-[1.035]"/><span className="gallery-sheen absolute inset-0"/><span className="absolute bottom-3 left-3 font-display text-sm italic text-primary-foreground/90">{String(i+1).padStart(2,"0")}</span></Button>)}</div></div>
     </section>
 
     <section id="date" className="mx-auto max-w-5xl px-6 py-12 md:py-18"><div className="grid gap-8 md:grid-cols-2"><div className="reveal"><p className="text-[10px] uppercase tracking-[.3em] text-primary">Chương IV · Hẹn ngày</p><h2 className="mt-3 text-[2.6rem] leading-[1.1] md:text-5xl">Tháng Mười<br/>mình có hẹn</h2></div><div className="reveal"><Calendar /></div></div>
